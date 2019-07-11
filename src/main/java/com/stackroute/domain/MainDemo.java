@@ -16,8 +16,6 @@ public class MainDemo {
         BeanFactory bean=new XmlBeanFactory(new ClassPathResource("beans.xml"));
         Movie movie1= context.getBean("movie",Movie.class);
         movie1.display();
-
-        System.out.println("hello");
     }
 
 }
