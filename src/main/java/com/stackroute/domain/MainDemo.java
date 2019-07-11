@@ -17,7 +17,7 @@ public class MainDemo {
         Movie movie1= context.getBean("movie",Movie.class);
         movie1.display();
 
-        
+        System.out.println("hello");
     }
 
 }
