@@ -21,7 +21,7 @@ public class Actor {
 
     public void print()
     {
-        System.out.println("hello java");
+        System.out.println("hello java program");
         System.out.println("My first spring task");
         System.out.println("Name is "+ name +"\n"+ "Gender is " + gender + "\n"+ " Age is " +age);
     }
