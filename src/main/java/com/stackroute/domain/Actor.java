@@ -1,28 +1,20 @@
 package com.stackroute.domain;
 
-import java.sql.SQLOutput;
-
 public class Actor {
     String  name;
     String gender;
     int age;
 
-    public void setName(String name) {
+    //constructor with two parameters
+    public Actor(String name, String gender, int age) {
         this.name = name;
-    }
-
-    public void setGender(String gender) {
         this.gender = gender;
-    }
-
-    public void setAge(int age) {
         this.age = age;
     }
 
+    //function to print the details of actor
     public void print()
     {
-        System.out.println("hello java program");
-        System.out.println("My first spring task");
-        System.out.println("Name is "+ name +"\n"+ "Gender is " + gender + "\n"+ " Age is " +age);
+        System.out.println("Name is "+ name +"\n"+ "Gender is " + gender + "\n"+ "Age is " +age);
     }
 }
