@@ -10,5 +10,8 @@
     <bean id="BeanLifecycleDemoBean" init-method="customInit" destroy-method="customDestroy" class="com.stackroute.domain.BeanLifecycleDemoBean">
     </bean>
 
+    <bean id="BeanPostProcessor" class="com.stackroute.domain.BeanPostProcessorDemoBean">
+    </bean>
+
 
 </beans>
