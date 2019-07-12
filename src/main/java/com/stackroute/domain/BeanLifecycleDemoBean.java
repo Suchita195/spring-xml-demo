@@ -18,7 +18,7 @@ public class BeanLifecycleDemoBean implements InitializingBean, DisposableBean {
         System.out.println("Properties Set Method");
     }
 
-    //Custom methods
+    //Custom methods..
     public void customInit()
     {
         System.out.println("init method called");

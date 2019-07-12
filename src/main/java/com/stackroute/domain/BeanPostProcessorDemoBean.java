@@ -5,14 +5,14 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 
 public class BeanPostProcessorDemoBean implements BeanPostProcessor {
 
-    //method for postProcessBeforeInitialization
+    //method for PostProcessBeforeInitialization
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException
     {
         System.out.println("Called postProcessBeforeInitialization for :" + beanName);
         return bean;
     }
 
-    //method for postProcessAfterInitialization
+    //method for PostProcessAfterInitialization
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException
     {
         System.out.println("Called postProcessAfterInitialization for :" + beanName);
