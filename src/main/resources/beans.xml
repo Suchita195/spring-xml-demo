@@ -6,8 +6,9 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+
     <!--bean for actor object 1-->
-    <bean id="suchita" class="com.stackroute.domain.Actor">
+    <bean id="suchita" name="actor1" class="com.stackroute.domain.Actor">
         <constructor-arg name="name" value="Suchita"/>
         <constructor-arg name="gender" value="Female"/>
         <constructor-arg name="age" value="23"/>
@@ -15,7 +16,7 @@
     </bean>
 
     <!--bean for actor object 2-->
-    <bean id="ashish" class="com.stackroute.domain.Actor">
+    <bean id="ashish"  name="actor2"  class="com.stackroute.domain.Actor">
         <constructor-arg index="0" value="Ashish"/>
         <constructor-arg index="1" value="Male"/>
         <constructor-arg index="2" value="25"/>
@@ -23,23 +24,27 @@
     </bean>
 
     <!--bean for actor object 3-->
-    <bean id="rashi" class="com.stackroute.domain.Actor">
+    <bean id="rashi"   name="actor3" class="com.stackroute.domain.Actor">
         <constructor-arg type="String" value="Rashi"/>
         <constructor-arg type="String" value="Female"/>
         <constructor-arg type="int" value="27"/>
 
     </bean>
 
-    <bean name="movie1" class="com.stackroute.domain.Movie" scope="prototype">
-        <constructor-arg name="actor1" ref="suchita"/>
-        <constructor-arg name="actor2" ref="ashish"/>
-        <constructor-arg name="actor3" ref="rashi"/>
+    <bean id="movie" class="com.stackroute.domain.Movie" autowire="byName">
     </bean>
 
-    <bean name="movie2" class="com.stackroute.domain.Movie" scope="prototype">
-        <constructor-arg name="actor1" ref="suchita"/>
-        <constructor-arg name="actor2" ref="ashish"/>
-        <constructor-arg name="actor3" ref="rashi"/>
+     <!--Exception thrown when autowire=byType is used-->
+    
+     <!--Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.
+     UnsatisfiedDependencyException: Error creating bean with name 'movie1' defined in class path resource [beans.xml]:
+     Unsatisfied dependency expressed through bean property 'actor1'; nested exception is org.springframework.beans.factory.
+     NoUniqueBeanDefinitionException: No qualifying bean of type 'com.stackroute.domain.Actor' available: expected single matching bean but found3: suchita,ashish,rashi
+     Exception in thread "main" org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'movie1' defined in
+     class path resource [beans.xml]: Unsatisfied dependency expressed through bean property 'actor1'; nested exception is
+     org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.stackroute.domain.Actor' available: expected
+     single matching bean but found 3: suchita,ashish,rashi-->
+    <bean id="movie1" class="com.stackroute.domain.Movie" autowire="constructor">
     </bean>
 
 </beans>

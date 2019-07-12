@@ -1,14 +1,30 @@
 package com.stackroute.domain;
 
-public class Actor {
-    String  name;
-    String gender;
-    int age;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
-    //constructor with two parameters
+public class Actor {
+    private String  name;
+    private String gender;
+    private int age;
+
+    //constructor
     public Actor(String name, String gender, int age) {
         this.name = name;
         this.gender = gender;
+        this.age = age;
+    }
+
+    //setters
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public void setAge(int age) {
         this.age = age;
     }
 
