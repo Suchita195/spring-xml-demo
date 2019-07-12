@@ -46,6 +46,7 @@ public class Movie implements ApplicationContextAware, BeanFactoryAware, BeanNam
         actor3.print();
     }
 
+    //BeanFactoryAware method
     @Override
     public void setBeanFactory(BeanFactory bean) throws BeansException {
         this.bean=bean;
@@ -53,12 +54,14 @@ public class Movie implements ApplicationContextAware, BeanFactoryAware, BeanNam
 
     }
 
+    //BeanNameAware method
     @Override
     public void setBeanName(String beanName) {
         System.out.println("Name of the bean is " + beanName);
 
     }
 
+    //ApplicationContextAware method
     @Override
     public void setApplicationContext(ApplicationContext context) throws BeansException {
         this.context=context;
