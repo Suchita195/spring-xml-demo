@@ -30,13 +30,20 @@
 
     </bean>
 
+    <bean id="sushmita" class="com.stackroute.domain.Actor">
+        <constructor-arg type="String" value="Sushmita"/>
+        <constructor-arg type="String" value="Female"/>
+        <constructor-arg type="int" value="25"/>
+
+    </bean>
+
     <bean name="movie1" class="com.stackroute.domain.Movie" scope="prototype">
         <constructor-arg name="actor1" ref="suchita"/>
         <constructor-arg name="actor2" ref="ashish"/>
-        <constructor-arg name="actor3" ref="rashi"/>
+        <constructor-arg name="actor3" ref="sushmita"/>
     </bean>
 
-    <bean name="movie2" class="com.stackroute.domain.Movie" scope="prototype">
+    <bean name="movie2,movie3" class="com.stackroute.domain.Movie" scope="prototype">
         <constructor-arg name="actor1" ref="suchita"/>
         <constructor-arg name="actor2" ref="ashish"/>
         <constructor-arg name="actor3" ref="rashi"/>
